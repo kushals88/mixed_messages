@@ -17,21 +17,32 @@ const fortuneMessages = [
     "You should: let go of doubt; confidence will carry you forward."
 ]
 
-const randomNumGenerator = (limit) => {
-    return Math.floor(Math.random()*limit);
-}
+/**
+ * get random index from array length
+ * @param {*} arrayLength 
+ * @returns number
+ */
+const getRandomIndex = (arrayLength) => Math.floor(Math.random() * arrayLength);
 
-const sign = signs[randomNumGenerator(signs.length)];
-
-const fortuneKeys = Object.keys(fortunes);
-const len = fortuneKeys.length;
-const fortuneKey = fortuneKeys[randomNumGenerator(len)];
+// generate random sign, fortune and message
+const sign = signs[getRandomIndex(signs.length)];
+const fortuneKey = Object.keys(fortunes)[getRandomIndex(Object.keys(fortunes).length)];
 const fortune = fortunes[fortuneKey];
+const message = fortuneMessages[getRandomIndex(fortuneMessages.length)];
 
-const message = fortuneMessages[randomNumGenerator(fortuneMessages.length)];
+/**
+ * format forutne message for user
+ * @param {*} sign 
+ * @param {*} fortune 
+ * @param {*} message 
+ * @returns string
+ */
+const formatMessage = (sign, fortune, message) => `
+    Your sign is ${sign}
 
-const formatMessage = (sign, fortune, message) => {
-    return `You sign is ${sign}.\n\n${fortune}\n\n${message}`;
-}
+    ${fortune}
+
+    ${message}
+`;
 
 console.log(formatMessage(sign, fortune, message));
