@@ -1,5 +1,5 @@
 
-const signs = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+const signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
 const fortunes = {
     career: "An unexpected opportunity will bring you closer to your dreams.",
     kindness: "A small act of kindness today will yield great rewards tomorrow.",
