@@ -23,7 +23,6 @@ const randomNumGenerator = (limit) => {
 
 const sign = signs[randomNumGenerator(signs.length)];
 
-// console.log(Object.keys(fortunes));
 const fortuneKeys = Object.keys(fortunes);
 const len = fortuneKeys.length;
 const fortuneKey = fortuneKeys[randomNumGenerator(len)];
@@ -31,8 +30,8 @@ const fortune = fortunes[fortuneKey];
 
 const message = fortuneMessages[randomNumGenerator(fortuneMessages.length)];
 
-console.log(`Your sign is ${sign}`);
-console.log();
-console.log(fortune);
-console.log();
-console.log(message);
+const formatMessage = (sign, fortune, message) => {
+    return `You sign is ${sign}.\n\n${fortune}\n\n${message}`;
+}
+
+console.log(formatMessage(sign, fortune, message));
